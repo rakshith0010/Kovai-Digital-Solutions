@@ -6,357 +6,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kovai Digital Solutions | Web Development in Coimbatore</title>
     <meta name="description" content="Kovai Digital Solutions provides professional website development, video editing, and social media management in Coimbatore. Transform your local business today.">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        navy: {
-                            800: '#1a2942',
-                            900: '#0f172a',
-                        },
-                        accent: {
-                            400: '#22d3ee', // Cyan
-                            500: '#06b6d4',
-                            600: '#0891b2',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        /* Custom styles for smooth animations and aesthetic touches */
-        .glass-nav {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
         }
+        
+        /* Navigation Bar */
+        header {
+            background-color: #0b192c; /* Dark blue to match your logo */
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00d2ff; /* Teal accent */
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f4f7f6;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            color: #0b192c;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff7b00; /* Orange accent from logo */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #e66a00;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            gap: 20px;
+        }
+
         .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-bottom-color: #06b6d4;
+
+        .service-card h3 {
+            color: #0b192c;
         }
-        .hero-pattern {
-            background-image: radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+
+        /* Contact & Location */
+        .contact-section {
+            background-color: #0b192c;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .contact-section a {
+            color: #00d2ff;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #07101d;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 antialiased overflow-x-hidden selection:bg-accent-500 selection:text-white">
+<body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <div class="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-accent-500/30">
-                        KDS
-                    </div>
-                    <span class="text-white font-bold text-xl tracking-tight hidden sm:block">Kovai Digital Solutions</span>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Home</a>
-                    <a href="#services" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Services</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Contact</a>
-                    <a href="#contact" class="bg-accent-500 hover:bg-accent-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)]">
-                        Get a Quote
-                    </a>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-300 hover:text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Header -->
+    <header>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Kovai Digital Solutions">
+        </a>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-navy-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-navy-900/80 z-0"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-accent-400 text-sm font-medium mb-8 backdrop-blur-sm">
-                <span class="relative flex h-3 w-3">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500"></span>
-                </span>
-                We are open for new projects
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-                <span class="block">Welcome to</span>
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-blue-500">Kovai Digital Solutions</span>
-            </h1>
-            
-            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10">
-                Transform your offline operations, build a stunning web presence, and dominate social media with our comprehensive digital growth strategies.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] flex items-center justify-center gap-2">
-                    Get Started <i class="fas fa-arrow-right text-sm"></i>
-                </a>
-                <a href="#contact" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
-                    Book a Consultation
-                </a>
-            </div>
-        </div>
-        
-        <!-- Decorative element -->
-        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    <section class="hero">
+        <h1>Welcome to Kovai Digital Solutions</h1>
+        <p>Your local partner in Coimbatore for professional digital growth. We build high-converting websites, edit engaging videos, and manage your social media presence.</p>
+        <a href="https://wa.me/917305877818" class="btn">Get a Free Consultation</a>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-accent-600 font-semibold tracking-wide uppercase text-sm mb-2">Our Expertise</h2>
-                <p class="text-3xl md:text-4xl font-bold text-navy-900">Comprehensive Solutions for Growth</p>
-                <div class="w-24 h-1 bg-accent-500 mx-auto mt-6 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service 1: Website Development -->
-                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
-                    <div class="h-48 w-full overflow-hidden relative">
-                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="Website Development" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
-                    </div>
-                    <div class="p-6 relative flex-1 flex flex-col">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors">Website Development</h3>
-                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
-                            Custom, responsive sites tailored for any industry, from seamless retail setups to robust platforms for engineering firms. We build fast, scalable web experiences.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Service 2: Business Digitalization -->
-                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
-                    <div class="h-48 w-full overflow-hidden relative">
-                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Business Digitalization" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
-                    </div>
-                    <div class="p-6 relative flex-1 flex flex-col">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors">Business Digitalization</h3>
-                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
-                            Transforming your traditional, offline operations into highly efficient, streamlined digital workflows to save time, reduce costs, and scale easily.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Service 3: Video Editing -->
-                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
-                    <div class="h-48 w-full overflow-hidden relative">
-                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop" alt="Video Editing" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
-                    </div>
-                    <div class="p-6 relative flex-1 flex flex-col">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors">Video Editing</h3>
-                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
-                            Captivate your audience with high-retention reels, professional promos, and dynamic content tailored for TikTok, Instagram, and YouTube.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Service 4: Social Media Management -->
-                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
-                    <div class="h-48 w-full overflow-hidden relative">
-                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" alt="Social Media Management" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
-                    </div>
-                    <div class="p-6 relative flex-1 flex flex-col">
-                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
-                            <i class="fas fa-hashtag"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors pr-2 break-words">Social Media Management</h3>
-                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
-                            Build a strategic online presence. We manage your profiles, engage with your community, and drive explosive audience growth across all platforms.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <section id="services" class="services">
+        <div class="service-card">
+            <h3>Website Development</h3>
+            <p>Custom, responsive websites designed to turn local visitors into paying customers.</p>
+        </div>
+        <div class="service-card">
+            <h3>Video Editing</h3>
+            <p>Professional video editing for Instagram Reels, YouTube Shorts, and promotional content.</p>
+        </div>
+        <div class="service-card">
+            <h3>Social Media Management</h3>
+            <p>Strategic content creation and management to grow your brand's online presence.</p>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <!-- Contact Info -->
-                <div class="w-full lg:w-5/12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">Ready to accelerate your digital growth?</h2>
-                    <p class="text-gray-600 mb-8 text-lg">
-                        Drop us a message and let's discuss how we can elevate your brand, streamline your business, and drive real results.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent-50 rounded-full flex items-center justify-center text-accent-600 shrink-0">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-navy-900">Email Us</h4>
-                                <p class="text-gray-500">info@kovaidigitalsolutions.in</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent-50 rounded-full flex items-center justify-center text-accent-600 shrink-0">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-navy-900">Call Us</h4>
-                                <p class="text-gray-500">+91 7305877818</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent-50 rounded-full flex items-center justify-center text-accent-600 shrink-0">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold text-navy-900">Location</h4>
-                                <p class="text-gray-500">Near Salzer Company, Samichittiplayam, Coimbatore - 641047</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Google Maps Integration -->
-                    <div class="mt-10 rounded-xl overflow-hidden shadow-lg border border-gray-100">
-                        <iframe 
-                            width="100%" 
-                            height="280" 
-                            frameborder="0" 
-                            scrolling="no" 
-                            marginheight="0" 
-                            marginwidth="0" 
-                            src="https://maps.google.com/maps?q=Samichettipalayam,+Coimbatore,+641047&hl=en&z=14&output=embed">
-                        </iframe>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="w-full lg:w-7/12">
-                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10">
-                        <form id="contactForm" action="#" method="POST">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="John Doe" required>
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition-all bg-gray-50 focus:bg-white" placeholder="john@example.com" required>
-                                </div>
-                            </div>
-                            <div class="mb-6">
-                                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
-                                <select id="service" name="service" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition-all bg-gray-50 focus:bg-white appearance-none cursor-pointer">
-                                    <option value="" disabled selected>Select a primary service...</option>
-                                    <option value="website">Website Development</option>
-                                    <option value="digitalization">Business Digitalization</option>
-                                    <option value="video">Video Editing</option>
-                                    <option value="social">Social Media Management</option>
-                                    <option value="multiple">Multiple / Full Package</option>
-                                </select>
-                            </div>
-                            <div class="mb-8">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition-all bg-gray-50 focus:bg-white resize-none" placeholder="Tell us about your project..." required></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center gap-2 group">
-                                Send Message
-                                <i class="fas fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Contact & Map Section -->
+    <section id="contact" class="contact-section">
+        <h2>Ready to grow your business?</h2>
+        <p>📍 Near Salzer Company, Samichettipalayam, Coimbatore - 641047</p>
+        <p>📞 WhatsApp/Call: <a href="https://wa.me/917305877818">+91 73058 77818</a></p>
+        <p>✉️ Email: contact@digitalgrowthsolution.com</p>
+        
+        <br>
+        <!-- Embedded Google Map targeting Samichettipalayam -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.2673322197657!2d76.9427!3d11.0933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f62f3f98c8c7%3A0x8e833f2a5b6c0c2a!2sSamichettipalayam%2C%20Tamil%20Nadu%20641047!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" max-width="600" height="300" style="border:0; max-width: 600px; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-navy-900 text-gray-400 py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <!-- Logo & Copyright -->
-                <div class="flex flex-col items-center md:items-start gap-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-sm">
-                            KDS
-                        </div>
-                        <span class="text-white font-bold text-lg tracking-tight">Kovai Digital Solutions</span>
-                    </div>
-                    <p class="text-sm">© 2026 Kovai Digital Solutions. All rights reserved.</p>
-                </div>
-
-                <!-- Social Links -->
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent-500 hover:text-white transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent-500 hover:text-white transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent-500 hover:text-white transition-colors">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/917305877818" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 z-50">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/917305877818" class="whatsapp-float" target="_blank">
+        💬
     </a>
 
-    <!-- WhatsApp Form Submission Script -->
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent standard form submission
-            
-            // Retrieve form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value || 'Not specified';
-            const message = document.getElementById('message').value;
-            
-            // Format the message text
-            const whatsappText = `Hello Kovai Digital Solutions, I have a new inquiry:
-            
-*Name:* ${name}
-*Email:* ${email}
-*Service:* ${service}
-*Message:* ${message}`;
-            
-            // Encode the text for URL compatibility
-            const encodedText = encodeURIComponent(whatsappText);
-            
-            // Open WhatsApp chat in a new tab
-            window.open(`https://wa.me/917305877818?text=${encodedText}`, '_blank');
-        });
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kovai Digital Solutions. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
