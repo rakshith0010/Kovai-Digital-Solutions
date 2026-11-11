@@ -84,10 +84,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-navy-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-pattern">
-        <div class="absolute inset-0 bg-navy-900/50 z-0"></div>
+    <section id="home" class="relative bg-navy-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-navy-900/80 z-0"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent-400 text-sm font-medium mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-accent-400 text-sm font-medium mb-8 backdrop-blur-sm">
                 <span class="relative flex h-3 w-3">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500"></span>
@@ -129,56 +129,68 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service 1: Website Development -->
-                <div class="service-card bg-white rounded-2xl p-8 border-b-4 border-transparent shadow-lg relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-accent-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500 ease-in-out"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center text-accent-600 text-2xl mb-6 shadow-sm">
+                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="Website Development" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="p-6 relative flex-1 flex flex-col">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-4 group-hover:text-accent-600 transition-colors">Website Development</h3>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors">Website Development</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
                             Custom, responsive sites tailored for any industry, from seamless retail setups to robust platforms for engineering firms. We build fast, scalable web experiences.
                         </p>
                     </div>
                 </div>
 
                 <!-- Service 2: Business Digitalization -->
-                <div class="service-card bg-white rounded-2xl p-8 border-b-4 border-transparent shadow-lg relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-accent-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500 ease-in-out"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center text-accent-600 text-2xl mb-6 shadow-sm">
+                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Business Digitalization" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="p-6 relative flex-1 flex flex-col">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
                             <i class="fas fa-network-wired"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-4 group-hover:text-accent-600 transition-colors">Business Digitalization</h3>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors">Business Digitalization</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
                             Transforming your traditional, offline operations into highly efficient, streamlined digital workflows to save time, reduce costs, and scale easily.
                         </p>
                     </div>
                 </div>
 
                 <!-- Service 3: Video Editing -->
-                <div class="service-card bg-white rounded-2xl p-8 border-b-4 border-transparent shadow-lg relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-accent-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500 ease-in-out"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center text-accent-600 text-2xl mb-6 shadow-sm">
+                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2300&auto=format&fit=crop" alt="Video Editing" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="p-6 relative flex-1 flex flex-col">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
                             <i class="fas fa-video"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-4 group-hover:text-accent-600 transition-colors">Video Editing</h3>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors">Video Editing</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
                             Captivate your audience with high-retention reels, professional promos, and dynamic content tailored for TikTok, Instagram, and YouTube.
                         </p>
                     </div>
                 </div>
 
-                <!-- Service 4: Social Media Mgmt -->
-                <div class="service-card bg-white rounded-2xl p-8 border-b-4 border-transparent shadow-lg relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-accent-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500 ease-in-out"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center text-accent-600 text-2xl mb-6 shadow-sm">
+                <!-- Service 4: Social Media Management -->
+                <div class="bg-white rounded-2xl border-b-4 border-transparent hover:border-accent-500 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group">
+                    <div class="h-48 w-full overflow-hidden relative">
+                        <div class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" alt="Social Media Management" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="p-6 relative flex-1 flex flex-col">
+                        <div class="w-14 h-14 bg-white rounded-xl shadow-md flex items-center justify-center text-accent-600 text-2xl absolute -top-7 left-6 border border-gray-100 z-20">
                             <i class="fas fa-hashtag"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-4 group-hover:text-accent-600 transition-colors">Social Media Mgmt</h3>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="text-xl font-bold text-navy-900 mt-6 mb-3 group-hover:text-accent-600 transition-colors pr-2 break-words">Social Media Management</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm flex-1">
                             Build a strategic online presence. We manage your profiles, engage with your community, and drive explosive audience growth across all platforms.
                         </p>
                     </div>
