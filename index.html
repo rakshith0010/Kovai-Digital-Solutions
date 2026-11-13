@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kovai Digital Solutions | Web Development in Coimbatore</title>
     <meta name="description" content="Kovai Digital Solutions provides professional website development, video editing, and social media management in Coimbatore. Transform your local business today.">
+    
+    <!-- Favicon for Google Search -->
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -62,12 +66,12 @@
     <nav class="fixed w-full z-50 glass-nav border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <div class="w-10 h-10 bg-accent-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-accent-500/30">
-                        KDS
-                    </div>
-                    <span class="text-white font-bold text-xl tracking-tight hidden sm:block">Kovai Digital Solutions</span>
-                </div>
+                <!-- Logo Updated -->
+                <a href="#home" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <img src="logo.jpeg" alt="Kovai Digital Solutions" class="h-12 w-auto object-contain rounded">
+                </a>
+                
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#home" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Home</a>
                     <a href="#services" class="text-gray-300 hover:text-white transition-colors text-sm font-medium">Services</a>
@@ -76,12 +80,23 @@
                         Get a Quote
                     </a>
                 </div>
+                
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-gray-300 hover:text-white focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10 absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="#contact" class="bg-accent-500 hover:bg-accent-600 text-white block px-3 py-2 rounded-md text-base font-semibold text-center mt-4">Get a Quote</a>
             </div>
         </div>
     </nav>
@@ -301,13 +316,10 @@
     <footer class="bg-navy-900 text-gray-400 py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <!-- Logo & Copyright -->
+                <!-- Logo Updated -->
                 <div class="flex flex-col items-center md:items-start gap-4">
                     <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-sm">
-                            KDS
-                        </div>
-                        <span class="text-white font-bold text-lg tracking-tight">Kovai Digital Solutions</span>
+                        <img src="logo.jpeg" alt="Kovai Digital Solutions" class="h-10 w-auto object-contain rounded">
                     </div>
                     <p class="text-sm">© 2026 Kovai Digital Solutions. All rights reserved.</p>
                 </div>
@@ -332,6 +344,25 @@
     <a href="https://wa.me/917305877818" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 z-50">
         <i class="fab fa-whatsapp"></i>
     </a>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        // Toggle menu when clicking the button
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 
     <!-- WhatsApp Form Submission Script -->
     <script>
