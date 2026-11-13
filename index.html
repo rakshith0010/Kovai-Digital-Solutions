@@ -321,7 +321,8 @@
                     <div class="flex items-center gap-2">
                         <img src="logo.jpeg" alt="Kovai Digital Solutions" class="h-10 w-auto object-contain rounded">
                     </div>
-                    <p class="text-sm">© 2026 Kovai Digital Solutions. All rights reserved.</p>
+                   <p class="text-sm">© <span id="year"></span> Kovai Digital Solutions. All rights reserved.</p>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
                 </div>
 
                 <!-- Social Links -->
