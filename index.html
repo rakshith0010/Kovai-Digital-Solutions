@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta name="google-site-verification" content="LGq8wPgNcp2mOrN7mshyVE4kIqIsI5Z7k9JF3ugaibI" />
     <meta charset="UTF-8">
@@ -19,22 +19,22 @@
     
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        navy: {
-                            800: '#1e293b',
-                            900: '#0b0f19',
-                            950: '#070a10',
+                        royal: {
+                            50: '#fbf8f3',
+                            100: '#f4ede1',
+                            800: '#2c251e',
+                            900: '#1a1612',
                         },
-                        accent: {
-                            400: '#38bdf8', // Bright Cyan
-                            500: '#0ea5e9',
-                            600: '#0284c7',
+                        gold: {
+                            400: '#d4af37', // Royal Gold
+                            500: '#c5a028',
+                            600: '#b08d1e',
                         }
                     }
                 }
@@ -43,48 +43,45 @@
     </script>
     <style>
         .glass-nav {
-            background: rgba(11, 15, 25, 0.85);
+            background: rgba(251, 248, 243, 0.9);
             backdrop-filter: blur(12px);
-        }
-        .hero-glow {
-            background: radial-gradient(circle at 50% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 60%);
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .card-hover:hover {
             transform: translateY(-8px);
-            border-color: rgba(14, 165, 233, 0.5);
-            box-shadow: 0 20px 30px -10px rgba(14, 165, 233, 0.15);
+            border-color: #c5a028;
+            box-shadow: 0 20px 30px -10px rgba(197, 160, 40, 0.15);
         }
     </style>
 </head>
-<body class="font-sans bg-navy-950 text-gray-100 antialiased overflow-x-hidden selection:bg-accent-500 selection:text-white">
+<body class="font-sans bg-royal-50 text-royal-900 antialiased overflow-x-hidden selection:bg-gold-500 selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-white/10">
+    <nav class="fixed w-full z-50 glass-nav border-b border-royal-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <a href="#home" class="flex items-center gap-3 cursor-pointer">
-                    <img src="logo.jpeg" alt="Kovai Digital Solutions" class="h-11 w-auto object-contain rounded-lg border border-accent-500/30">
-                    <span class="font-bold text-lg tracking-tight hidden sm:block text-white">Kovai Digital <span class="text-accent-400">Solutions</span></span>
+                    <img src="logo.jpeg" alt="Kovai Digital Solutions" class="h-11 w-auto object-contain rounded-lg border border-gold-400/40">
+                    <span class="font-bold text-lg tracking-tight hidden sm:block text-royal-900">Kovai Digital <span class="text-gold-600">Solutions</span></span>
                 </a>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-300 hover:text-accent-400 transition-colors text-sm font-medium">Home</a>
-                    <a href="#services" class="text-gray-300 hover:text-accent-400 transition-colors text-sm font-medium">Services</a>
-                    <a href="#portfolio" class="text-gray-300 hover:text-accent-400 transition-colors text-sm font-medium">Portfolio</a>
-                    <a href="#contact" class="text-gray-300 hover:text-accent-400 transition-colors text-sm font-medium">Contact</a>
-                    <a href="#contact" class="bg-accent-500 hover:bg-accent-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_20px_rgba(14,165,233,0.4)] hover:shadow-[0_0_30px_rgba(14,165,233,0.7)]">
+                    <a href="#home" class="text-royal-800 hover:text-gold-600 transition-colors text-sm font-medium">Home</a>
+                    <a href="#services" class="text-royal-800 hover:text-gold-600 transition-colors text-sm font-medium">Services</a>
+                    <a href="#portfolio" class="text-royal-800 hover:text-gold-600 transition-colors text-sm font-medium">Portfolio</a>
+                    <a href="#contact" class="text-royal-800 hover:text-gold-600 transition-colors text-sm font-medium">Contact</a>
+                    <a href="#contact" class="bg-gold-500 hover:bg-gold-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md shadow-gold-500/20">
                         Get a Quote
                     </a>
                 </div>
                 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                    <button id="mobile-menu-btn" class="text-royal-900 hover:text-gold-600 focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -92,42 +89,42 @@
         </div>
         
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10 absolute w-full shadow-2xl">
+        <div id="mobile-menu" class="hidden md:hidden bg-royal-100 border-t border-royal-200 absolute w-full shadow-2xl">
             <div class="px-4 pt-3 pb-6 space-y-2">
-                <a href="#home" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
-                <a href="#portfolio" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-                <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
-                <a href="#contact" class="bg-accent-500 hover:bg-accent-600 text-white block px-3 py-2 rounded-md text-base font-semibold text-center mt-3">Get a Quote</a>
+                <a href="#home" class="text-royal-900 hover:text-gold-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#services" class="text-royal-900 hover:text-gold-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#portfolio" class="text-royal-900 hover:text-gold-600 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="#contact" class="text-royal-900 hover:text-gold-600 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                <a href="#contact" class="bg-gold-500 hover:bg-gold-600 text-white block px-3 py-2 rounded-md text-base font-semibold text-center mt-3">Get a Quote</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-navy-950 hero-glow pt-36 pb-24 lg:pt-48 lg:pb-36 overflow-hidden">
+    <section id="home" class="relative bg-royal-100 pt-36 pb-24 lg:pt-48 lg:pb-36 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/30 text-accent-400 text-sm font-medium mb-8 backdrop-blur-md">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gold-400/40 text-gold-600 text-sm font-medium mb-8 shadow-sm">
                 <span class="relative flex h-3 w-3">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-3 w-3 bg-accent-500"></span>
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-gold-500"></span>
                 </span>
                 Leading Digital Agency in Coimbatore
             </div>
             
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-royal-900 tracking-tight mb-6 leading-tight">
                 Empowering Businesses With <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-sky-400 to-blue-600">Next-Gen Digital Solutions</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 via-amber-600 to-gold-600">Royal Digital Solutions</span>
             </h1>
             
-            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10">
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-royal-800/80 mb-10">
                 From high-end website development and logo branding to viral video editing and digital marketing, we scale your offline business into an online powerhouse.
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" class="px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white rounded-full font-semibold text-lg transition-all shadow-[0_0_25px_rgba(14,165,233,0.4)] hover:shadow-[0_0_35px_rgba(14,165,233,0.7)] flex items-center justify-center gap-2">
+                <a href="#services" class="px-8 py-4 bg-gold-500 hover:bg-gold-600 text-white rounded-full font-semibold text-lg transition-all shadow-lg shadow-gold-500/30 flex items-center justify-center gap-2">
                     Explore Services <i class="fas fa-arrow-right text-sm"></i>
                 </a>
-                <a href="#contact" class="px-8 py-4 bg-navy-800/80 hover:bg-navy-800 text-white border border-white/10 rounded-full font-semibold text-lg transition-all flex items-center justify-center">
+                <a href="#contact" class="px-8 py-4 bg-white hover:bg-royal-50 text-royal-900 border border-royal-200 rounded-full font-semibold text-lg transition-all shadow-sm flex items-center justify-center">
                     Contact Us
                 </a>
             </div>
@@ -135,109 +132,109 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-navy-900/50 border-t border-white/5">
+    <section id="services" class="py-24 bg-white border-t border-royal-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-accent-400 font-semibold tracking-widest uppercase text-sm mb-2">Our Expertise</h2>
-                <p class="text-3xl md:text-4xl font-extrabold text-white">Comprehensive Solutions for Growth</p>
-                <div class="w-20 h-1 bg-accent-500 mx-auto mt-4 rounded-full"></div>
+                <h2 class="text-gold-600 font-semibold tracking-widest uppercase text-sm mb-2">Our Expertise</h2>
+                <p class="text-3xl md:text-4xl font-extrabold text-royal-900">Comprehensive Solutions for Growth</p>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl p-6 card-hover flex flex-col">
-                    <div class="w-14 h-14 bg-accent-500/10 border border-accent-500/30 rounded-xl flex items-center justify-center text-accent-400 text-2xl mb-6">
+                <div class="bg-royal-50 border border-royal-100 rounded-2xl p-6 card-hover flex flex-col shadow-sm">
+                    <div class="w-14 h-14 bg-white border border-gold-400/30 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6 shadow-sm">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Website Development</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1">Custom, fast, and responsive web platforms built to convert visitors into loyal paying customers.</p>
+                    <h3 class="text-xl font-bold text-royal-900 mb-3">Website Development</h3>
+                    <p class="text-royal-800/70 text-sm leading-relaxed flex-1">Custom, fast, and responsive web platforms built to convert visitors into loyal paying customers.</p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl p-6 card-hover flex flex-col">
-                    <div class="w-14 h-14 bg-accent-500/10 border border-accent-500/30 rounded-xl flex items-center justify-center text-accent-400 text-2xl mb-6">
+                <div class="bg-royal-50 border border-royal-100 rounded-2xl p-6 card-hover flex flex-col shadow-sm">
+                    <div class="w-14 h-14 bg-white border border-gold-400/30 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6 shadow-sm">
                         <i class="fas fa-pen-nib"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Logo Designing</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1">Unique, modern, and memorable brand identities that set your business apart from competitors.</p>
+                    <h3 class="text-xl font-bold text-royal-900 mb-3">Logo Designing</h3>
+                    <p class="text-royal-800/70 text-sm leading-relaxed flex-1">Unique, modern, and memorable brand identities that set your business apart from competitors.</p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl p-6 card-hover flex flex-col">
-                    <div class="w-14 h-14 bg-accent-500/10 border border-accent-500/30 rounded-xl flex items-center justify-center text-accent-400 text-2xl mb-6">
+                <div class="bg-royal-50 border border-royal-100 rounded-2xl p-6 card-hover flex flex-col shadow-sm">
+                    <div class="w-14 h-14 bg-white border border-gold-400/30 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6 shadow-sm">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Video Editing</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed flex-1">Captivating reels, cinematic promos, and high-retention cuts designed to go viral.</p>
+                    <h3 class="text-xl font-bold text-royal-900 mb-3">Video Editing</h3>
+                    <p class="text-royal-800/70 text-sm leading-relaxed flex-1">Captivating reels, cinematic promos, and high-retention cuts designed to go viral.</p>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl p-6 card-hover flex flex-col">
-                    <div class="w-14 h-14 bg-accent-500/10 border border-accent-500/30 rounded-xl flex items-center justify-center text-accent-400 text-2xl mb-6">
+                <div class="bg-royal-50 border border-royal-100 rounded-2xl p-6 card-hover flex flex-col shadow-sm">
+                    <div class="w-14 h-14 bg-white border border-gold-400/30 rounded-xl flex items-center justify-center text-gold-600 text-2xl mb-6 shadow-sm">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Digital Marketing</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed flex-1">Data-driven strategies and social media campaigns to maximize your online visibility.</p>
+                    <h3 class="text-xl font-bold text-royal-900 mb-3">Digital Marketing</h3>
+                    <p class="text-royal-800/70 text-sm leading-relaxed flex-1">Data-driven strategies and social media campaigns to maximize your online visibility.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-24 bg-navy-950 border-t border-white/5">
+    <section id="portfolio" class="py-24 bg-royal-50 border-t border-royal-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-accent-400 font-semibold tracking-widest uppercase text-sm mb-2">Our Recent Work</h2>
-                <p class="text-3xl md:text-4xl font-extrabold text-white">Excellence in Execution</p>
-                <div class="w-20 h-1 bg-accent-500 mx-auto mt-4 rounded-full"></div>
+                <h2 class="text-gold-600 font-semibold tracking-widest uppercase text-sm mb-2">Our Recent Work</h2>
+                <p class="text-3xl md:text-4xl font-extrabold text-royal-900">Excellence in Execution</p>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Portfolio 1 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl overflow-hidden card-hover">
+                <div class="bg-white border border-royal-100 rounded-2xl overflow-hidden card-hover shadow-sm">
                     <div class="h-48 overflow-hidden relative">
                         <img src="logo.jpeg" alt="Logo Designing" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-navy-950/80 text-accent-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Branding</div>
+                        <div class="absolute top-3 left-3 bg-royal-900/80 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Branding</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2">Brand Identity & Logo</h3>
-                        <p class="text-gray-400 text-sm">Professional corporate branding for local businesses.</p>
+                        <h3 class="text-lg font-bold text-royal-900 mb-2">Brand Identity & Logo</h3>
+                        <p class="text-royal-800/70 text-sm">Professional corporate branding for local businesses.</p>
                     </div>
                 </div>
 
                 <!-- Portfolio 2 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl overflow-hidden card-hover">
+                <div class="bg-white border border-royal-100 rounded-2xl overflow-hidden card-hover shadow-sm">
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop" alt="Video Editing" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-navy-950/80 text-accent-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Production</div>
+                        <div class="absolute top-3 left-3 bg-royal-900/80 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Production</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2">Reels & Promo Editing</h3>
-                        <p class="text-gray-400 text-sm">Engaging short-form video ads for social media reach.</p>
+                        <h3 class="text-lg font-bold text-royal-900 mb-2">Reels & Promo Editing</h3>
+                        <p class="text-royal-800/70 text-sm">Engaging short-form video ads for social media reach.</p>
                     </div>
                 </div>
 
                 <!-- Portfolio 3 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl overflow-hidden card-hover">
+                <div class="bg-white border border-royal-100 rounded-2xl overflow-hidden card-hover shadow-sm">
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="Web Development" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-navy-950/80 text-accent-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Development</div>
+                        <div class="absolute top-3 left-3 bg-royal-900/80 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Development</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2">Responsive Web Design</h3>
-                        <p class="text-gray-400 text-sm">Modern business websites optimized for conversions.</p>
+                        <h3 class="text-lg font-bold text-royal-900 mb-2">Responsive Web Design</h3>
+                        <p class="text-royal-800/70 text-sm">Modern business websites optimized for conversions.</p>
                     </div>
                 </div>
 
                 <!-- Portfolio 4 -->
-                <div class="bg-navy-900 border border-white/10 rounded-2xl overflow-hidden card-hover">
+                <div class="bg-white border border-royal-100 rounded-2xl overflow-hidden card-hover shadow-sm">
                     <div class="h-48 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Digital Marketing" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-navy-950/80 text-accent-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Growth</div>
+                        <div class="absolute top-3 left-3 bg-royal-900/80 text-gold-400 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 backdrop-blur-md">Growth</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2">Digital Campaigns</h3>
-                        <p class="text-gray-400 text-sm">Targeted online strategies for maximum ROI.</p>
+                        <h3 class="text-lg font-bold text-royal-900 mb-2">Digital Campaigns</h3>
+                        <p class="text-royal-800/70 text-sm">Targeted online strategies for maximum ROI.</p>
                     </div>
                 </div>
             </div>
@@ -245,48 +242,48 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-navy-900/50 border-t border-white/5 relative">
+    <section id="contact" class="py-24 bg-white border-t border-royal-100 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 <!-- Contact Info -->
                 <div class="w-full lg:w-5/12">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Ready to scale your business online?</h2>
-                    <p class="text-gray-400 mb-8 text-lg">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-royal-900 mb-6">Ready to scale your business online?</h2>
+                    <p class="text-royal-800/80 mb-8 text-lg">
                         Get in touch with us today. Let’s discuss how we can elevate your brand and drive real results.
                     </p>
                     
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent-500/10 border border-accent-500/30 rounded-xl flex items-center justify-center text-accent-400 shrink-0">
+                            <div class="w-12 h-12 bg-royal-50 border border-gold-400/40 rounded-xl flex items-center justify-center text-gold-600 shrink-0 shadow-sm">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-white">Email Us</h4>
-                                <p class="text-gray-400">info@kovaidigitalsolutions.in</p>
+                                <h4 class="text-lg font-semibold text-royal-900">Email Us</h4>
+                                <p class="text-royal-800/70">info@kovaidigitalsolutions.in</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent-500/10 border border-accent-500/30 rounded-xl flex items-center justify-center text-accent-400 shrink-0">
+                            <div class="w-12 h-12 bg-royal-50 border border-gold-400/40 rounded-xl flex items-center justify-center text-gold-600 shrink-0 shadow-sm">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-white">Call Us</h4>
-                                <p class="text-gray-400">+91 7305877818</p>
+                                <h4 class="text-lg font-semibold text-royal-900">Call Us</h4>
+                                <p class="text-royal-800/70">+91 7305877818</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-accent-500/10 border border-accent-500/30 rounded-xl flex items-center justify-center text-accent-400 shrink-0">
+                            <div class="w-12 h-12 bg-royal-50 border border-gold-400/40 rounded-xl flex items-center justify-center text-gold-600 shrink-0 shadow-sm">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-white">Location</h4>
-                                <p class="text-gray-400">Near Salzer Company, Samichettipalayam, Coimbatore - 641047</p>
+                                <h4 class="text-lg font-semibold text-royal-900">Location</h4>
+                                <p class="text-royal-800/70">Near Salzer Company, Samichettipalayam, Coimbatore - 641047</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Google Maps -->
-                    <div class="mt-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                    <div class="mt-10 rounded-2xl overflow-hidden shadow-lg border border-royal-200">
                         <iframe 
                             width="100%" 
                             height="280" 
@@ -301,34 +298,34 @@
 
                 <!-- Contact Form -->
                 <div class="w-full lg:w-7/12">
-                    <div class="bg-navy-900 border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+                    <div class="bg-royal-50 border border-royal-200 rounded-3xl p-8 md:p-10 shadow-xl">
                         <form id="contactForm" action="#" method="POST">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
-                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white focus:border-accent-500 outline-none transition-all" placeholder="John Doe" required>
+                                    <label for="name" class="block text-sm font-medium text-royal-900 mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-xl bg-white border border-royal-200 text-royal-900 focus:border-gold-500 outline-none transition-all" placeholder="John Doe" required>
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white focus:border-accent-500 outline-none transition-all" placeholder="john@example.com" required>
+                                    <label for="email" class="block text-sm font-medium text-royal-900 mb-2">Email Address</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white border border-royal-200 text-royal-900 focus:border-gold-500 outline-none transition-all" placeholder="john@example.com" required>
                                 </div>
                             </div>
                             <div class="mb-6">
-                                <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Needed</label>
-                                <select id="service" name="service" class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white focus:border-accent-500 outline-none transition-all cursor-pointer">
-                                    <option value="" disabled selected class="bg-navy-900">Select a primary service...</option>
-                                    <option value="logo" class="bg-navy-900">Logo Designing</option>
-                                    <option value="website" class="bg-navy-900">Website Development</option>
-                                    <option value="video" class="bg-navy-900">Video Editing</option>
-                                    <option value="marketing" class="bg-navy-900">Digital Marketing</option>
-                                    <option value="multiple" class="bg-navy-900">Full Package / Multiple</option>
+                                <label for="service" class="block text-sm font-medium text-royal-900 mb-2">Service Needed</label>
+                                <select id="service" name="service" class="w-full px-4 py-3 rounded-xl bg-white border border-royal-200 text-royal-900 focus:border-gold-500 outline-none transition-all cursor-pointer">
+                                    <option value="" disabled selected>Select a primary service...</option>
+                                    <option value="logo">Logo Designing</option>
+                                    <option value="website">Website Development</option>
+                                    <option value="video">Video Editing</option>
+                                    <option value="marketing">Digital Marketing</option>
+                                    <option value="multiple">Full Package / Multiple</option>
                                 </select>
                             </div>
                             <div class="mb-8">
-                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
-                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-navy-950 border border-white/10 text-white focus:border-accent-500 outline-none transition-all resize-none" placeholder="Tell us about your project..." required></textarea>
+                                <label for="message" class="block text-sm font-medium text-royal-900 mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-white border border-royal-200 text-royal-900 focus:border-gold-500 outline-none transition-all resize-none" placeholder="Tell us about your project..." required></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(14,165,233,0.4)] flex items-center justify-center gap-2 group">
+                            <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-white font-semibold py-4 rounded-xl transition-all shadow-lg shadow-gold-500/30 flex items-center justify-center gap-2 group">
                                 Send Message
                                 <i class="fas fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                             </button>
@@ -340,7 +337,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-950 text-gray-400 py-12 border-t border-white/10">
+    <footer class="bg-royal-900 text-royal-100 py-12 border-t border-royal-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <!-- Logo & Auto Copyright -->
@@ -349,18 +346,18 @@
                         <img src="logo.jpeg" alt="Kovai Digital Solutions" class="h-9 w-auto object-contain rounded">
                         <span class="font-bold text-white">Kovai Digital Solutions</span>
                     </div>
-                    <p class="text-sm">© <span id="year"></span> Kovai Digital Solutions. All rights reserved.</p>
+                    <p class="text-sm text-royal-100/70">© <span id="year"></span> Kovai Digital Solutions. All rights reserved.</p>
                 </div>
 
                 <!-- Social Links -->
                 <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent-500 hover:text-white transition-colors">
+                    <a href="#" class="w-10 h-10 rounded-full bg-royal-800 border border-royal-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent-500 hover:text-white transition-colors">
+                    <a href="#" class="w-10 h-10 rounded-full bg-royal-800 border border-royal-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent-500 hover:text-white transition-colors">
+                    <a href="#" class="w-10 h-10 rounded-full bg-royal-800 border border-royal-700 flex items-center justify-center hover:bg-gold-500 hover:text-white transition-colors">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
